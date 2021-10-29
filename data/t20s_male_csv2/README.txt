@@ -120,8 +120,77 @@ Matches included in this archive
 --------------------------------
 
 
+2021-10-28 - international - T20 - male - 1284495 - Maldives vs Kuwait
+2021-10-28 - international - T20 - male - 1284496 - Bahrain vs Saudi Arabia
 
 
+
+2021-10-27 - international - T20 - male - 1284493 - Maldives vs Bahrain
+
+
+
+2021-10-26 - international - T20 - male - 1283094 - Nigeria vs Sierra Leone
+
+
+
+
+
+2021-10-24 - international - T20 - male - 1282278 - Gibraltar vs Bulgaria
+2021-10-24 - international - T20 - male - 1282279 - Malta vs Switzerland
+2021-10-24 - international - T20 - male - 1283093 - Nigeria vs Sierra Leone
+2021-10-24 - international - T20 - male - 1284490 - Bahrain vs Kuwait
+2021-10-24 - international - T20 - male - 1284491 - Qatar vs Maldives
+
+
+
+2021-10-23 - international - T20 - male - 1282276 - Switzerland vs Malta
+2021-10-23 - international - T20 - male - 1283092 - Sierra Leone vs Nigeria
+2021-10-23 - international - T20 - male - 1284488 - Qatar vs Bahrain
+2021-10-23 - international - T20 - male - 1284489 - Maldives vs Saudi Arabia
+
+
+
+2021-10-22 - international - T20 - male - 1282273 - Gibraltar vs Switzerland
+2021-10-22 - international - T20 - male - 1282275 - Bulgaria vs Switzerland
+2021-10-22 - international - T20 - male - 1283038 - Swaziland vs Rwanda
+2021-10-22 - international - T20 - male - 1283039 - Malawi vs Lesotho
+2021-10-22 - international - T20 - male - 1283040 - Malawi vs Rwanda
+2021-10-22 - international - T20 - male - 1283041 - Uganda vs Seychelles
+
+
+
+2021-10-21 - international - T20 - male - 1282272 - Malta vs Gibraltar
+2021-10-21 - international - T20 - male - 1282748 - Italy vs Germany
+2021-10-21 - international - T20 - male - 1282749 - Denmark vs Jersey
+2021-10-21 - international - T20 - male - 1283037 - Uganda vs Ghana
+2021-10-21 - international - T20 - male - 1283091 - Nigeria vs Sierra Leone
+
+
+
+2021-10-20 - international - T20 - male - 1282746 - Italy vs Jersey
+2021-10-20 - international - T20 - male - 1282747 - Germany vs Denmark
+2021-10-20 - international - T20 - male - 1283033 - Malawi vs Seychelles
+2021-10-20 - international - T20 - male - 1283034 - Swaziland vs Ghana
+2021-10-20 - international - T20 - male - 1283035 - Swaziland vs Seychelles
+2021-10-20 - international - T20 - male - 1283036 - Rwanda vs Lesotho
+
+
+2021-10-19 - international - T20 - male - 1282744 - Italy vs Denmark
+2021-10-19 - international - T20 - male - 1282745 - Germany vs Jersey
+2021-10-19 - international - T20 - male - 1283029 - Malawi vs Ghana
+2021-10-19 - international - T20 - male - 1283030 - Lesotho vs Uganda
+2021-10-19 - international - T20 - male - 1283032 - Swaziland vs Uganda
+2021-10-19 - international - T20 - male - 1283089 - Nigeria vs Sierra Leone
+
+
+
+
+2021-10-17 - international - T20 - male - 1282742 - Jersey vs Denmark
+2021-10-17 - international - T20 - male - 1282743 - Italy vs Germany
+2021-10-17 - international - T20 - male - 1283025 - Lesotho vs Seychelles
+2021-10-17 - international - T20 - male - 1283026 - Swaziland vs Malawi
+2021-10-17 - international - T20 - male - 1283027 - Ghana vs Lesotho
+2021-10-17 - international - T20 - male - 1283028 - Uganda vs Rwanda
 2021-10-16 - international - T20 - male - 1282740 - Denmark vs Germany
 2021-10-16 - international - T20 - male - 1282741 - Jersey vs Italy
 2021-10-16 - international - T20 - male - 1283021 - Rwanda vs Ghana
