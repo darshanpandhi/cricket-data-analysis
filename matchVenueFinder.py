@@ -48,3 +48,20 @@ def genrateCountriesCsv():
 
     csv_file.close()
 
+# The parameter has to be a string since the matchID in the countries.csv are strings
+def findCountryWithMatchId(matchId):
+    country = " "
+    fileReader = open("countries.csv","r")
+    csvFile = csv.reader(fileReader)
+    
+    for m in csvFile:
+        if matchId in m:
+            country = country.join(m[2:])
+
+    if(country==" "):
+        print("MatchID does not exist")
+    fileReader.close()
+    return country
+
+#print(findCountryWithMatchId("682897"))
+#print(findCountryWithMatchId("682"))
