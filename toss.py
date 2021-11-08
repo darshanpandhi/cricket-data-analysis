@@ -51,6 +51,7 @@ def tossWinPercentage(teamName):
                 else:
                     break       
         f.close()
+    print(teamName)
     print("Total Matches played: ",len(listofMatchIds))                      
     print("Tosses Won: ",totalTossWon)
     print("Toss winning probability: ",totalTossWon/len(listofMatchIds)*100)
