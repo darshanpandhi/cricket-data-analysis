@@ -14,6 +14,7 @@ def tossWinPercentage(teamName):
 
     totalTossWon=0
     matchesWon=0
+    winPercentage=0
 
     for matchId in listofMatchIds:
         fileName=matchId.strip()
@@ -40,16 +41,30 @@ def tossWinPercentage(teamName):
                 else:
                     break       
         f.close()
-    print(teamName)
-    print("Total Matches played: ",len(listofMatchIds))                      
-    print("Tosses Won: ",totalTossWon)
-    print("Toss winning probability: ",totalTossWon/len(listofMatchIds)*100)
-    print("Matches Won while winning the Toss: ",matchesWon)
+    #print(teamName)
+    #print("Total Matches played: ",len(listofMatchIds))                      
+    #print("Tosses Won: ",totalTossWon)
+    #print("Toss winning probability: ",totalTossWon/len(listofMatchIds)*100)
+    #print("Matches Won while winning the Toss: ",matchesWon)
     
-
-    winPercentage=(matchesWon/totalTossWon)*100
-    print("Chances that "+teamName+" will win the match if "+teamName+" wins the toss(%): ",winPercentage)
+    if(totalTossWon>0):
+        winPercentage=(matchesWon/totalTossWon)*100
+    #print("Chances that "+teamName+" will win the match if "+teamName+" wins the toss(%): ",winPercentage)
     return winPercentage
+
+def tossAverage():
+    teams=['England', 'Pakistan', 'India', 'New Zealand', 'South Africa', 'Australia', 'Afghanistan', 'Bangladesh', 'Sri Lanka', 'West Indies', 'Zimbabwe', 'Ireland', 'Nepal', 'Scotland', 'Namibia']#, 'UAE', 'Oman', 'Netherlands', 'Papua New Guinea', 'Singapore', 'Qatar', 'Canada', 'Jersey', 'Hong Kong', 'Kenya', 'Kuwait', 'Italy', 'Uganda', 'United States', 'Saudi Arabia', 'Malaysia', 'Bermuda', 'Germany', 'Denmark', 'Botswana', 'Nigeria', 'Bahrain', 'Tanzania', 'Guernsey', 'Romania', 'Spain', 'Norway', 'France', 'Belgium', 'Austria', 'Finland', 'Philippines', 'Mexico', 'Cayman Islands', 'Belize', 'Vanuatu', 'Portugal', 'Ghana', 'Isle of Man', 'Luxembourg', 'Malawi', 'Peru', 'Fiji', 'Sweden', 'Samoa', 'Hungary', 'Japan', 'Costa Rica', 'Argentina', 'Thailand', 'Panama', 'Malta', 'Czech Republic', 'South Korea', 'Greece', 'Rwanda', 'Bulgaria', 'Mozambique', 'Bhutan', 'Saint Helena', 'Seychelles', 'Brazil', 'Maldives', 'Chile', 'Myanmar', 'Indonesia', 'Lesotho', 'Eswatini', 'Turkey', 'China', 'Serbia', 'Gibraltar']
+    totalTeams=len(teams)
+    tossWinPercent=0
+    for team in teams:
+        win=tossWinPercentage(team)
+        tossWinPercent+=win
+        """if(win>0):
+            tossWinPercent+=win
+        else:
+            totalTeams-=1"""
+    print("If a team wins the toss, their match winning chances are(%): ",tossWinPercent/totalTeams)
+
 
 def headToHead(team1,team2):
     f=open("data/t20s_male_csv2/README.txt","r")
@@ -92,11 +107,36 @@ def headToHead(team1,team2):
         print(team1+" will win: ",team1MatchesWon/(team1MatchesWon+team2MatchesWon)*100)
         print(team2+" will win: ",team2MatchesWon/(team1MatchesWon+team2MatchesWon)*100)
 
+def teamRanking(team1, team2):
+    team1Rating=0
+    team2Rating=0
+    f=open("data/t20s_male_csv2/team_ranking.csv","r")
+    csv_f=csv.reader(f)
+    csv_f=list(csv_f)
+
+    for line in csv_f:
+        if team1 in line:
+            team1Rating=line[4:]
+        if team2 in line:
+            team2Rating=line[4:]
+        if team1Rating!=0 and team2Rating!=0:
+            break
+    f.close()
     
+    team1Rating=int(team1Rating[0])
+    team2Rating=int(team2Rating[0])
+    print(team1+"'s Rating: ",team1Rating)
+    print(team2+"'s Rating: ",team2Rating)
+    print(team1+" will win: ",team1Rating/(team1Rating+team2Rating)*100)
+    print(team2+" will win: ",team2Rating/(team1Rating+team2Rating)*100)
 
 
-tossWinPercentage("India")
-print("-------------------------------------------------")
-tossWinPercentage("Pakistan")
-print("-------------------------------------------------")
+
+
+    
+#print(tossWinPercentage("India"))
 headToHead("India","Pakistan")
+print("-------------------------------------------------")
+teamRanking("India","Pakistan")
+print("-------------------------------------------------")
+tossAverage()
