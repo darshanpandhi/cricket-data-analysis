@@ -53,16 +53,16 @@ def tossWinPercentage(teamName):
     return winPercentage
 
 def tossAverage():
-    teams=['England', 'Pakistan', 'India', 'New Zealand', 'South Africa', 'Australia', 'Afghanistan', 'Bangladesh', 'Sri Lanka', 'West Indies', 'Zimbabwe', 'Ireland', 'Nepal', 'Scotland', 'Namibia']#, 'UAE', 'Oman', 'Netherlands', 'Papua New Guinea', 'Singapore', 'Qatar', 'Canada', 'Jersey', 'Hong Kong', 'Kenya', 'Kuwait', 'Italy', 'Uganda', 'United States', 'Saudi Arabia', 'Malaysia', 'Bermuda', 'Germany', 'Denmark', 'Botswana', 'Nigeria', 'Bahrain', 'Tanzania', 'Guernsey', 'Romania', 'Spain', 'Norway', 'France', 'Belgium', 'Austria', 'Finland', 'Philippines', 'Mexico', 'Cayman Islands', 'Belize', 'Vanuatu', 'Portugal', 'Ghana', 'Isle of Man', 'Luxembourg', 'Malawi', 'Peru', 'Fiji', 'Sweden', 'Samoa', 'Hungary', 'Japan', 'Costa Rica', 'Argentina', 'Thailand', 'Panama', 'Malta', 'Czech Republic', 'South Korea', 'Greece', 'Rwanda', 'Bulgaria', 'Mozambique', 'Bhutan', 'Saint Helena', 'Seychelles', 'Brazil', 'Maldives', 'Chile', 'Myanmar', 'Indonesia', 'Lesotho', 'Eswatini', 'Turkey', 'China', 'Serbia', 'Gibraltar']
+    teams=['England', 'Pakistan', 'India', 'New Zealand', 'South Africa', 'Australia', 'Afghanistan', 'Bangladesh', 'Sri Lanka', 'West Indies', 'Zimbabwe', 'Ireland', 'Nepal', 'Scotland', 'Namibia', 'UAE', 'Oman', 'Netherlands', 'Papua New Guinea', 'Singapore', 'Qatar', 'Canada', 'Jersey', 'Hong Kong', 'Kenya', 'Kuwait', 'Italy', 'Uganda', 'United States', 'Saudi Arabia', 'Malaysia', 'Bermuda', 'Germany', 'Denmark', 'Botswana', 'Nigeria', 'Bahrain', 'Tanzania', 'Guernsey', 'Romania', 'Spain', 'Norway', 'France', 'Belgium', 'Austria', 'Finland', 'Philippines', 'Mexico', 'Cayman Islands', 'Belize', 'Vanuatu', 'Portugal', 'Ghana', 'Isle of Man', 'Luxembourg', 'Malawi', 'Peru', 'Fiji', 'Sweden', 'Samoa', 'Hungary', 'Japan', 'Costa Rica', 'Argentina', 'Thailand', 'Panama', 'Malta', 'Czech Republic', 'South Korea', 'Greece', 'Rwanda', 'Bulgaria', 'Mozambique', 'Bhutan', 'Saint Helena', 'Seychelles', 'Brazil', 'Maldives', 'Chile', 'Myanmar', 'Indonesia', 'Lesotho', 'Eswatini', 'Turkey', 'China', 'Serbia', 'Gibraltar']
     totalTeams=len(teams)
     tossWinPercent=0
     for team in teams:
         win=tossWinPercentage(team)
-        tossWinPercent+=win
-        """if(win>0):
+        #tossWinPercent+=win
+        if(win>0):
             tossWinPercent+=win
         else:
-            totalTeams-=1"""
+            totalTeams-=1
     print("If a team wins the toss, their match winning chances are(%): ",tossWinPercent/totalTeams)
 
 
@@ -135,8 +135,8 @@ def teamRanking(team1, team2):
 
     
 #print(tossWinPercentage("India"))
-headToHead("India","Pakistan")
+headToHead("Australia","New Zealand")
 print("-------------------------------------------------")
-teamRanking("India","Pakistan")
+teamRanking("Australia","New Zealand")
 print("-------------------------------------------------")
-tossAverage()
+#tossAverage()
