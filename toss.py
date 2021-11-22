@@ -1,5 +1,75 @@
 import csv
 
+def generateList(team1,team2):
+    f=open("data/t20s_male_csv2/README.txt","r")
+    listofMatchIds=[]
+    L=f.readlines()
+    str1=team1+" vs "+team2
+    str2=team2+" vs "+team1
+    for line in L:
+        if str1 in line or str2 in line:
+            Id=line[42:49]
+            Id.strip()
+            listofMatchIds.append(Id)
+    f.close()
+    return listofMatchIds
+
+def tossEvalTeams(team1,team2):
+    listofMatchIds=[]
+    listofMatchIds=generateList(team1, team2)
+    team1WonTosses=0
+    team1WonMatches=0
+    team2WonTosses=0
+    team2WonMatches=0
+
+    for matchId in listofMatchIds:
+        fileName=matchId.strip()
+        fileName=fileName+"_info.csv"
+        f=open("data/t20s_male_csv2/"+fileName,"r")
+        csv_f=csv.reader(f)
+        csv_f=list(csv_f)
+    
+        for info in csv_f:
+            if "toss_winner" in info:
+                team=""
+                for words in info[2:]:
+                    team+=words
+                if team1 == team:
+                    team1WonTosses+=1
+                    break
+            if "winner" in info:
+                winner=""
+                for words in info[2:]:
+                    winner+=words
+                if team1 == winner:
+                    team1WonMatches+=1
+                    break
+                else:
+                    break       
+        f.close()
+        for info in csv_f:
+            if "toss_winner" in info:
+                team=""
+                for words in info[2:]:
+                    team+=words
+                if team2 == team:
+                    team2WonTosses+=1
+                    break
+            if "winner" in info:
+                winner=""
+                for words in info[2:]:
+                    winner+=words
+                if team2 == winner:
+                    team2WonMatches+=1
+                    break
+                else:
+                    break       
+        f.close()
+    print(team1+" will win the match if they win the toss: ",team1WonMatches/team1WonTosses*100)
+    print(team2+" will win the match if they win the toss: ",team2WonMatches/team2WonTosses*100)
+        
+
+
 def tossWinPercentage(teamName):
     f=open("data/t20s_male_csv2/README.txt","r")
     listofMatchIds=[]
@@ -135,8 +205,9 @@ def teamRanking(team1, team2):
 
     
 #print(tossWinPercentage("India"))
-headToHead("Australia","New Zealand")
+#headToHead("India","Pakistan")
+#print("-------------------------------------------------")
+#teamRanking("Australia","New Zealand")
 print("-------------------------------------------------")
-teamRanking("Australia","New Zealand")
-print("-------------------------------------------------")
+tossEvalTeams("India", "Pakistan")
 #tossAverage()
