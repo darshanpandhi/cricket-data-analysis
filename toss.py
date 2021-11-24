@@ -14,9 +14,7 @@ def generateList(team1,team2):
     f.close()
     return listofMatchIds
 
-def tossEvalTeams(team1,team2):
-    listofMatchIds=[]
-    listofMatchIds=generateList(team1, team2)
+def tossEvalTeams(team1,team2,listofMatchIds):
     team1WonTosses=0
     team1WonMatches=0
     team2WonTosses=0
@@ -65,22 +63,21 @@ def tossEvalTeams(team1,team2):
                 else:
                     break       
         f.close()
-    print(team1+" will win the match if they win the toss: ",team1WonMatches/team1WonTosses*100)
-    print(team2+" will win the match if they win the toss: ",team2WonMatches/team2WonTosses*100)
+    if team1WonTosses>0:
+        team1tossWin=team1WonMatches/team1WonTosses*100
+    else:
+        team1tossWin=0
+    if team2WonTosses>0:
+        team2tossWin=team2WonMatches/team2WonTosses*100
+    else:
+        team2tossWin=0
+    print(team1+" will win the match if they win the toss: ",team1tossWin)
+    print(team2+" will win the match if they win the toss: ",team2tossWin)
         
 
 
-def tossWinPercentage(teamName):
-    f=open("data/t20s_male_csv2/README.txt","r")
-    listofMatchIds=[]
-    L=f.readlines()
-
-    for line in L:
-        if teamName in line:    
-            Id=line[42:49]
-            Id.strip()
-            listofMatchIds.append(Id)
-    f.close()
+def tossWinPercentage(teamName, listofMatchIds):
+    
 
     totalTossWon=0
     matchesWon=0
@@ -128,7 +125,6 @@ def tossAverage():
     tossWinPercent=0
     for team in teams:
         win=tossWinPercentage(team)
-        #tossWinPercent+=win
         if(win>0):
             tossWinPercent+=win
         else:
@@ -136,18 +132,7 @@ def tossAverage():
     print("If a team wins the toss, their match winning chances are(%): ",tossWinPercent/totalTeams)
 
 
-def headToHead(team1,team2):
-    f=open("data/t20s_male_csv2/README.txt","r")
-    listofMatchIds=[]
-    L=f.readlines()
-    str1=team1+" vs "+team2
-    str2=team2+" vs "+team1
-    for line in L:
-        if str1 in line or str2 in line:
-            Id=line[42:49]
-            Id.strip()
-            listofMatchIds.append(Id)
-    f.close()
+def headToHead(team1,team2,listofMatchIds):
     
     team1MatchesWon=0
     team2MatchesWon=0
@@ -169,7 +154,7 @@ def headToHead(team1,team2):
                     team2MatchesWon+=1
         f.close()
 
-    print(str1)
+    print(team1+" vs "+team2)
     print("Total matches played: ",len(listofMatchIds))
     print("Matches won by "+team1+": ",team1MatchesWon)
     print("Matches won by "+team2+": ",team2MatchesWon)
@@ -200,14 +185,29 @@ def teamRanking(team1, team2):
     print(team1+" will win: ",team1Rating/(team1Rating+team2Rating)*100)
     print(team2+" will win: ",team2Rating/(team1Rating+team2Rating)*100)
 
+def main():
+    team1=input("Enter the name of team1: ")
+    team2=input("Enter the name of team2: ")
+
+    listofMatchIds=generateList(team1,team2)
+    if(len(listofMatchIds)==0):
+        teamRanking(team1,team2)
+    else:
+        headToHead(team1,team2,listofMatchIds)
+        print("-------------------------------------------------")
+        print("\nPrediction with toss result known: ")
+        tossEvalTeams(team1,team2,listofMatchIds)
+        print("-------------------------------------------------")
+        print("\nPrediction based on ranking: ")
+        teamRanking(team1,team2)
 
 
 
-    
+main()
 #print(tossWinPercentage("India"))
 #headToHead("India","Pakistan")
 #print("-------------------------------------------------")
 #teamRanking("Australia","New Zealand")
-print("-------------------------------------------------")
-tossEvalTeams("India", "Pakistan")
+#print("-------------------------------------------------")
+#tossEvalTeams("India", "Pakistan")
 #tossAverage()
