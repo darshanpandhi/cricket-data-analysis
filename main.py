@@ -6,7 +6,8 @@ import re
 
 def read_file():
     path = os.getcwd()
-    csv_files = glob.glob(os.path.join(path, "..\\project\\cricket-data-analysis\\data\\t20s_male_csv2\\*.csv"))
+    csv_files = glob.glob(os.path.join(path, "..\\pythonProject5\\data\\t20s_male_csv2"
+                                             "\\*.csv"))
     match_detail = csv_files
     regex = re.compile(r'(.*.)_info.csv$')
     match_detail = [i for i in match_detail if not regex.match(i)]
