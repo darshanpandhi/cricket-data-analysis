@@ -9,11 +9,11 @@ def genrateCountriesCsv():
     L = fh.readlines()
 
     for i in L:
-        sentense = []
+        sentence = []
         L2 = i.split()
         if word in L2:
-            sentense = i
-            listOfMatchIds.append(sentense[42:49])
+            sentence = i
+            listOfMatchIds.append(sentence[42:49])
 
     fh.close()
 
