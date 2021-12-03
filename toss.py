@@ -1,4 +1,5 @@
 import csv
+from typing import Generic
 
 def generateList(team1,team2):
     f=open("data/t20s_male_csv2/README.txt","r")
@@ -116,16 +117,18 @@ def tossWinPercentage(teamName, listofMatchIds):
     
     if(totalTossWon>0):
         winPercentage=(matchesWon/totalTossWon)*100
+    else:
+        winPercentage=-1
     #print("Chances that "+teamName+" will win the match if "+teamName+" wins the toss(%): ",winPercentage)
     return winPercentage
 
 def tossAverage():
-    teams=['England', 'Pakistan', 'India', 'New Zealand', 'South Africa', 'Australia', 'Afghanistan', 'Bangladesh', 'Sri Lanka', 'West Indies', 'Zimbabwe', 'Ireland', 'Nepal', 'Scotland', 'Namibia', 'UAE', 'Oman', 'Netherlands', 'Papua New Guinea', 'Singapore', 'Qatar', 'Canada', 'Jersey', 'Hong Kong', 'Kenya', 'Kuwait', 'Italy', 'Uganda', 'United States', 'Saudi Arabia', 'Malaysia', 'Bermuda', 'Germany', 'Denmark', 'Botswana', 'Nigeria', 'Bahrain', 'Tanzania', 'Guernsey', 'Romania', 'Spain', 'Norway', 'France', 'Belgium', 'Austria', 'Finland', 'Philippines', 'Mexico', 'Cayman Islands', 'Belize', 'Vanuatu', 'Portugal', 'Ghana', 'Isle of Man', 'Luxembourg', 'Malawi', 'Peru', 'Fiji', 'Sweden', 'Samoa', 'Hungary', 'Japan', 'Costa Rica', 'Argentina', 'Thailand', 'Panama', 'Malta', 'Czech Republic', 'South Korea', 'Greece', 'Rwanda', 'Bulgaria', 'Mozambique', 'Bhutan', 'Saint Helena', 'Seychelles', 'Brazil', 'Maldives', 'Chile', 'Myanmar', 'Indonesia', 'Lesotho', 'Eswatini', 'Turkey', 'China', 'Serbia', 'Gibraltar']
+    teams=['England', 'Pakistan', 'India', 'New Zealand', 'South Africa', 'Australia', 'Sri Lanka', 'West Indies','Bangladesh','Afghanistan','Zimbabwe', 'Ireland', 'Nepal', 'Scotland', 'Namibia', 'UAE', 'Oman', 'Netherlands', 'Papua New Guinea', 'Singapore', 'Qatar', 'Canada', 'Jersey', 'Hong Kong', 'Kenya', 'Kuwait', 'Italy', 'Uganda', 'United States', 'Saudi Arabia', 'Malaysia', 'Bermuda', 'Germany', 'Denmark', 'Botswana', 'Nigeria', 'Bahrain', 'Tanzania', 'Guernsey', 'Romania', 'Spain', 'Norway', 'France', 'Belgium', 'Austria', 'Finland', 'Philippines', 'Mexico', 'Cayman Islands', 'Belize', 'Vanuatu', 'Portugal', 'Ghana', 'Isle of Man', 'Luxembourg', 'Malawi', 'Peru', 'Fiji', 'Sweden', 'Samoa', 'Hungary', 'Japan', 'Costa Rica', 'Argentina', 'Thailand', 'Panama', 'Malta', 'Czech Republic', 'South Korea', 'Greece', 'Rwanda', 'Bulgaria', 'Mozambique', 'Bhutan', 'Saint Helena', 'Seychelles', 'Brazil', 'Maldives', 'Chile', 'Myanmar', 'Indonesia', 'Lesotho', 'Eswatini', 'Turkey', 'China', 'Serbia', 'Gibraltar']
     totalTeams=len(teams)
     tossWinPercent=0
     for team in teams:
-        win=tossWinPercentage(team)
-        if(win>0):
+        win=tossWinPercentage(team,generateList(team,""))
+        if(win>=0):
             tossWinPercent+=win
         else:
             totalTeams-=1
@@ -186,7 +189,7 @@ def teamRanking(team1, team2):
     print(team2+" will win: ",team2Rating/(team1Rating+team2Rating)*100)
 
 def main():
-    team1=input("Enter the name of team1: ")
+    """team1=input("Enter the name of team1: ")
     team2=input("Enter the name of team2: ")
 
     listofMatchIds=generateList(team1,team2)
@@ -199,7 +202,8 @@ def main():
         tossEvalTeams(team1,team2,listofMatchIds)
         print("-------------------------------------------------")
         print("\nPrediction based on ranking: ")
-        teamRanking(team1,team2)
+        teamRanking(team1,team2)"""
+    tossAverage()
 
 
 
