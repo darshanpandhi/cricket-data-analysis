@@ -1,88 +1,87 @@
 ﻿pos,team,matches,points,rating
-1,England,33,"9,145",277
-2,Pakistan,39,"10,342",265
-3,India,33,"8,703",264
-4,New Zealand,33,"8,538",259
-5,South Africa,35,"8,858",253
-6,Australia,38,"9,272",244
-7,Afghanistan,17,"3,951",232
-8,Bangladesh,34,"7,888",232
-9,Sri Lanka,30,"6,951",232
-10,West Indies,34,"7,680",226
+1,England,28,"7,786",278
+2,India,28,"7,456",266
+3,Pakistan,34,"8,883",261
+4,New Zealand,28,"7,192",257
+5,South Africa,30,"7,489",250
+6,Bangladesh,26,"6,259",241
+7,Australia,33,"7,923",240
+8,Afghanistan,12,"2,826",236
+9,West Indies,29,"6,792",234
+10,Sri Lanka,22,"5,048",229
 11,Zimbabwe,30,"5,751",192
-12,Ireland,29,"5,458",188
+12,Ireland,26,"4,930",190
 13,Nepal,19,"3,556",187
-14,Scotland,24,"4,447",185
-15,Namibia,25,"4,439",178
+14,Scotland,14,"2,553",182
+15,Papua New Guinea,14,"2,501",179
 16,UAE,12,"2,130",178
-17,Oman,13,"2,260",174
-18,Netherlands,23,"3,925",171
-19,Papua New Guinea,19,"3,166",167
+17,Netherlands,20,"3,504",175
+18,Oman,10,"1,732",173
+19,Namibia,15,"2,438",163
 20,Singapore,12,"1,678",140
-21,Qatar,13,"1,738",134
-22,Canada,12,"1,580",132
-23,Jersey,19,"2,321",122
-24,Hong Kong,13,"1,572",121
+21,Qatar,11,"1,422",129
+22,Canada,10,"1,263",126
+23,Hong Kong,13,"1,572",121
+24,Jersey,13,"1,481",114
 25,Kenya,8,894,112
-26,Kuwait,10,"1,066",107
-27,Italy,12,"1,235",103
-28,Uganda,16,"1,429",89
-29,United States,11,973,88
-30,Saudi Arabia,6,518,86
+26,Italy,6,663,111
+27,Kuwait,8,866,108
+28,Saudi Arabia,4,428,107
+29,Bermuda,6,568,95
+30,Denmark,9,849,94
 31,Malaysia,20,"1,723",86
-32,Bermuda,7,601,86
-33,Germany,23,"1,872",81
-34,Denmark,15,"1,149",77
-35,Botswana,14,"1,068",76
-36,Nigeria,5,375,75
-37,Bahrain,6,443,74
-38,Tanzania,7,507,72
-39,Guernsey,9,645,72
-40,Romania,17,"1,158",68
-41,Spain,11,749,68
-42,Norway,10,666,67
-43,France,7,433,62
-44,Belgium,17,"1,051",62
-45,Austria,13,786,60
-46,Finland,9,502,56
-47,Philippines,5,241,48
+32,Uganda,10,847,85
+33,United States,8,644,81
+34,Botswana,10,786,79
+35,Nigeria,5,375,75
+36,Germany,17,"1,258",74
+37,Guernsey,9,645,72
+38,Romania,17,"1,158",68
+39,Spain,11,749,68
+40,Norway,10,667,67
+41,Belgium,17,"1,048",62
+42,Austria,13,775,60
+43,Bahrain,4,227,57
+44,Tanzania,3,167,56
+45,Sweden,10,536,54
+46,Philippines,5,241,48
+47,France,7,333,48
 48,Mexico,7,313,45
 49,Cayman Islands,3,132,44
-50,Belize,8,351,44
-51,Vanuatu,10,435,44
+50,Vanuatu,10,435,44
+51,Belize,5,209,42
 52,Portugal,9,374,42
-53,Ghana,13,538,41
-54,Isle of Man,7,279,40
-55,Luxembourg,16,607,38
-56,Malawi,15,553,37
-57,Peru,5,179,36
-58,Fiji,3,105,35
-59,Sweden,10,349,35
+53,Argentina,5,206,41
+54,Luxembourg,16,607,38
+55,Peru,5,179,36
+56,Fiji,3,105,35
+57,Finland,9,313,35
+58,Malawi,9,312,35
+59,Panama,5,162,32
 60,Samoa,5,159,32
 61,Hungary,5,159,32
 62,Japan,4,126,32
 63,Costa Rica,4,126,32
-64,Argentina,6,157,26
+64,Ghana,7,209,30
 65,Thailand,7,175,25
-66,Panama,7,173,25
-67,Malta,20,436,22
-68,Czech Republic,19,396,21
-69,South Korea,4,78,20
-70,Greece,5,94,19
-71,Rwanda,14,204,15
+66,Malta,20,436,22
+67,Czech Republic,19,396,21
+68,South Korea,4,78,20
+69,Mozambique,9,175,19
+70,Isle of Man,4,77,19
+71,Greece,5,94,19
 72,Bulgaria,16,233,15
-73,Mozambique,14,190,14
-74,Bhutan,4,47,12
+73,Bhutan,4,47,12
+74,Maldives,7,65,9
 75,Saint Helena,6,55,9
-76,Seychelles,6,53,9
+76,Rwanda,8,70,9
 77,Brazil,5,39,8
-78,Maldives,9,62,7
-79,Chile,5,19,4
-80,Myanmar,3,1,0
-81,Indonesia,3,0,0
-82,Lesotho,9,0,0
-83,Eswatini,9,0,0
-84,Turkey,3,0,0
-85,China,4,0,0
-86,Serbia,5,0,0
-87,Gibraltar,9,0,0
+78,Chile,5,19,4
+79,Myanmar,3,1,0
+80,Indonesia,3,0,0
+81,Lesotho,3,0,0
+82,Eswatini,3,0,0
+83,Turkey,3,0,0
+84,China,4,0,0
+85,Serbia,5,0,0
+86,Gibraltar,9,0,0
