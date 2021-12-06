@@ -189,7 +189,7 @@ def teamRanking(team1, team2):
     print(team2+" will win: ",team2Rating/(team1Rating+team2Rating)*100)
 
 def main():
-    """team1=input("Enter the name of team1: ")
+    team1=input("Enter the name of team1: ")
     team2=input("Enter the name of team2: ")
 
     listofMatchIds=generateList(team1,team2)
@@ -202,7 +202,7 @@ def main():
         tossEvalTeams(team1,team2,listofMatchIds)
         print("-------------------------------------------------")
         print("\nPrediction based on ranking: ")
-        teamRanking(team1,team2)"""
+        teamRanking(team1,team2)
     tossAverage()
 
 
