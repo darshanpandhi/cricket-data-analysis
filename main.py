@@ -6,7 +6,7 @@ import re
 
 def read_file():
     path = os.getcwd()
-    csv_files = glob.glob(os.path.join(path, "..\\pythonProject5\\data\\t20s_male_csv2"
+    csv_files = glob.glob(os.path.join(path, "..\\cricket-data-analysis-datasets\\data\\t20s_male_csv2"
                                              "\\*.csv"))
     match_detail = csv_files
     regex = re.compile(r'(.*.)_info.csv$')
@@ -37,7 +37,7 @@ def find_match_id(t1, t2):
             if final_data['team1'][i] == t2:
                 ls.append(final_data['match_id'][i])
     print(ls)
-    print("Match Id For the two teams is ", len(ls))
+    print("the total list of match id's for the two teams is ", len(ls))
 
 
 def main():
