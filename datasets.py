@@ -34,3 +34,48 @@ def find_match_ids(t1, t2):
         if final_data['team2'][i] == t1:
             if final_data['team1'][i] == t2:
                 ls.append(final_data['match_id'][i])
+
+
+def generateCountriesCsv():
+    # Change path depending on where the README with the list of matches is located
+    fh = open("data/t20s_male_csv2/README.txt", "r")
+    word = "male"
+    s = " "
+    listOfMatchIds = []
+    L = fh.readlines()
+
+    for i in L:
+        sentence = []
+        L2 = i.split()
+        if word in L2:
+            sentence = i
+            listOfMatchIds.append(sentence[42:49])
+
+    fh.close()
+
+    listOfVenues = []
+
+    for j in listOfMatchIds:
+        nameOfFile = j.strip()
+        nameOfFile = nameOfFile + "_info.csv"
+        # Change path depending on where the dataset is located
+        f = open("data/t20s_male_csv2/" + nameOfFile, "r")
+        csv_f = csv.reader(f)
+        csv_f = list(csv_f)
+
+        for k in csv_f:
+            if "venue" in k:
+                cR = " "
+                # print("MatchID " + j + ": " + cR.join(k[2:]))
+                listOfVenues.append([j, cR.join(k[2:])])
+                break
+
+        f.close()
+
+    csv_file = open("countries.csv", 'w')
+    csv_writer = csv.writer(csv_file, delimiter=",")
+    csv_writer.writerow(["Match ID", "Venue", "Country"])
+    for row in listOfVenues:
+        csv_writer.writerow(row)
+
+    csv_file.close()
