@@ -1,5 +1,5 @@
 import csv
-from typing import Generic
+import TeamAndVenues
 
 def generateList(team1,team2):
     f=open("data/t20s_male_csv2/README.txt","r")
@@ -118,7 +118,7 @@ def tossWinPercentage(teamName, listofMatchIds):
     return winPercentage
 
 def tossAverage():
-    teams=['England', 'Pakistan', 'India', 'New Zealand', 'South Africa', 'Australia', 'Sri Lanka', 'West Indies','Bangladesh','Afghanistan','Zimbabwe', 'Ireland', 'Nepal', 'Scotland', 'Namibia', 'UAE', 'Oman', 'Netherlands', 'Papua New Guinea', 'Singapore', 'Qatar', 'Canada', 'Jersey', 'Hong Kong', 'Kenya', 'Kuwait', 'Italy', 'Uganda', 'United States', 'Saudi Arabia', 'Malaysia', 'Bermuda', 'Germany', 'Denmark', 'Botswana', 'Nigeria', 'Bahrain', 'Tanzania', 'Guernsey', 'Romania', 'Spain', 'Norway', 'France', 'Belgium', 'Austria', 'Finland', 'Philippines', 'Mexico', 'Cayman Islands', 'Belize', 'Vanuatu', 'Portugal', 'Ghana', 'Isle of Man', 'Luxembourg', 'Malawi', 'Peru', 'Fiji', 'Sweden', 'Samoa', 'Hungary', 'Japan', 'Costa Rica', 'Argentina', 'Thailand', 'Panama', 'Malta', 'Czech Republic', 'South Korea', 'Greece', 'Rwanda', 'Bulgaria', 'Mozambique', 'Bhutan', 'Saint Helena', 'Seychelles', 'Brazil', 'Maldives', 'Chile', 'Myanmar', 'Indonesia', 'Lesotho', 'Eswatini', 'Turkey', 'China', 'Serbia', 'Gibraltar']
+    teams=TeamAndVenues.TeamAndVenues.keys()
     totalTeams=len(teams)
     tossWinPercent=0
     for team in teams:
