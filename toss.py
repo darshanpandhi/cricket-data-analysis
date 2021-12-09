@@ -127,7 +127,7 @@ def tossAverage():
             tossWinPercent+=win
         else:
             totalTeams-=1
-    print("If a team wins the toss, their match winning chances are(%): ",tossWinPercent/totalTeams)
+    print("\nIf a team wins the toss, their match winning chances are(average %): ",tossWinPercent/totalTeams)
 
 
 def headToHead(team1,team2,listofMatchIds):
@@ -220,5 +220,5 @@ def main():
 
 
 main()
-#tossAverage()
+tossAverage()
 
