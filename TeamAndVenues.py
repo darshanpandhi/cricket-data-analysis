@@ -131,5 +131,3 @@ TeamAndVenues = {
     "Sweden": [],
     "Belize": []
 }
-
-worldCupTeams = ["Afghanistan", "Australia", "Bangladesh", "England", "India", "Ireland", "Namibia", "Netherlands", "New Zealand", "Oman", "Pakistan", "Papua New Guinea", "Scotland", "South Africa", "Sri Lanka", "West Indies"]
