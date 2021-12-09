@@ -1,3 +1,3 @@
 # cricket-data-analysis
 
-In this project, we will be analyzing data from ICC Men ODI World cup events.
+**Database Used** : T20 International matches between 17th February 2005 - 16th October 2021 (both including).
