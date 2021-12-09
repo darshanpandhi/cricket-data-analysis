@@ -72,8 +72,8 @@ def tossEvalTeams(team1,team2,listofMatchIds):
         team2tossWin=team2WonMatches/team2WonTosses*100
     else:
         team2tossWin=0
-    print(team1+" will win the match if they win the toss: ",team1tossWin)
-    print(team2+" will win the match if they win the toss: ",team2tossWin)
+    
+    return [team1tossWin,team2tossWin]
         
 
 
@@ -109,17 +109,12 @@ def tossWinPercentage(teamName, listofMatchIds):
                 else:
                     break       
         f.close()
-    #print(teamName)
-    #print("Total Matches played: ",len(listofMatchIds))                      
-    #print("Tosses Won: ",totalTossWon)
-    #print("Toss winning probability: ",totalTossWon/len(listofMatchIds)*100)
-    #print("Matches Won while winning the Toss: ",matchesWon)
     
     if(totalTossWon>0):
         winPercentage=(matchesWon/totalTossWon)*100
     else:
         winPercentage=-1
-    #print("Chances that "+teamName+" will win the match if "+teamName+" wins the toss(%): ",winPercentage)
+
     return winPercentage
 
 def tossAverage():
@@ -157,13 +152,10 @@ def headToHead(team1,team2,listofMatchIds):
                     team2MatchesWon+=1
         f.close()
 
-    print(team1+" vs "+team2)
-    print("Total matches played: ",len(listofMatchIds))
-    print("Matches won by "+team1+": ",team1MatchesWon)
-    print("Matches won by "+team2+": ",team2MatchesWon)
-    if(len(listofMatchIds)!=0):
-        print(team1+" will win: ",team1MatchesWon/(team1MatchesWon+team2MatchesWon)*100)
-        print(team2+" will win: ",team2MatchesWon/(team1MatchesWon+team2MatchesWon)*100)
+        team1win=team1MatchesWon/(team1MatchesWon+team2MatchesWon)*100
+        team2win=team2MatchesWon/(team1MatchesWon+team2MatchesWon)*100
+        
+        return [team1win,team2win]
 
 def teamRanking(team1, team2):
     team1Rating=0
@@ -183,10 +175,10 @@ def teamRanking(team1, team2):
     
     team1Rating=int(team1Rating[0])
     team2Rating=int(team2Rating[0])
-    print(team1+"'s Rating: ",team1Rating)
-    print(team2+"'s Rating: ",team2Rating)
-    print(team1+" will win: ",team1Rating/(team1Rating+team2Rating)*100)
-    print(team2+" will win: ",team2Rating/(team1Rating+team2Rating)*100)
+    team1win=team1Rating/(team1Rating+team2Rating)*100
+    team2win=team2Rating/(team1Rating+team2Rating)*100
+
+    return [team1win,team2win]
 
 def main():
     team1=input("Enter the name of team1: ")
@@ -194,24 +186,39 @@ def main():
 
     listofMatchIds=generateList(team1,team2)
     if(len(listofMatchIds)==0):
-        teamRanking(team1,team2)
+        result=teamRanking(team1,team2)
+        if result[0]>result[1]:
+            print("Winner: ",team1)
+        elif result[1]>result[0]:
+            print("Winner: ",team2)
+        else:
+            print("Match might tie, win percentage is 50-50")
+
     else:
-        headToHead(team1,team2,listofMatchIds)
+        resultHtoH=headToHead(team1,team2,listofMatchIds)
+        if resultHtoH[0]>resultHtoH[1]:
+            print("Winner: ",team1)
+            winner=team1
+        elif resultHtoH[1]>resultHtoH[0]:
+            print("Winner: ",team2)
+            winner=team2
+        else:
+            print("Match might tie, win percentage is 50-50")
+            winner=team1 +" or "+team2
         print("-------------------------------------------------")
+
         print("\nPrediction with toss result known: ")
-        tossEvalTeams(team1,team2,listofMatchIds)
-        print("-------------------------------------------------")
-        print("\nPrediction based on ranking: ")
-        teamRanking(team1,team2)
-    tossAverage()
+        teamWonToss=input("Enter the team name that won the toss: ")
+        resultToss=tossEvalTeams(team1,team2,listofMatchIds)
+        if teamWonToss==team1 and resultToss[0]>resultToss[1]:
+            print("Winner: ",team1)
+        elif teamWonToss==team2 and resultToss[1]>resultToss[0]:
+            print("Winner: ",team2)
+        else:
+            print("Winner: ",winner)
 
 
 
 main()
-#print(tossWinPercentage("India"))
-#headToHead("India","Pakistan")
-#print("-------------------------------------------------")
-#teamRanking("Australia","New Zealand")
-#print("-------------------------------------------------")
-#tossEvalTeams("India", "Pakistan")
 #tossAverage()
+
