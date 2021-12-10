@@ -1,5 +1,5 @@
 import csv
-import TeamAndVenues
+from TeamAndVenues import TeamAndVenues
 
 def generateList(team1,team2):
     f=open("data/t20s_male_csv2/README.txt","r")
@@ -118,7 +118,7 @@ def tossWinPercentage(teamName, listofMatchIds):
     return winPercentage
 
 def tossAverage():
-    teams=TeamAndVenues.TeamAndVenues.keys()
+    teams=TeamAndVenues.keys()
     totalTeams=len(teams)
     tossWinPercent=0
     for team in teams:
