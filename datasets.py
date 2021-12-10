@@ -35,7 +35,6 @@ def findMatchIdsForATeam(team):
             Id.strip()
             listofMatchIds.append(Id)
     f.close()
-    print(listofMatchIds)
     return listofMatchIds
 
 def findMatchIdsForTwoTeams(t1, t2):
@@ -99,7 +98,6 @@ def generateCountriesCsv():
         for k in csv_f:
             if "venue" in k:
                 cR = " "
-                # print("MatchID " + j + ": " + cR.join(k[2:]))
                 listOfVenues.append([j, cR.join(k[2:])])
                 break
 

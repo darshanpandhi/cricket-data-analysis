@@ -45,4 +45,3 @@ def findNoOfWins(matchIds, team):
             matchesWon = matchesWon+1
     
     return matchesWon
-    
