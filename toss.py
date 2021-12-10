@@ -218,7 +218,5 @@ def main():
             print("Winner: ",winner)
 
 
-
 main()
 tossAverage()
-
