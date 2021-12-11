@@ -122,7 +122,8 @@ def tossAverage():
     totalTeams=len(teams)
     tossWinPercent=0
     for team in teams:
-        win=tossWinPercentage(team,generateList(team,""))
+        listofMatchIds=generateList(team,"")
+        win=tossWinPercentage(team,listofMatchIds)
         if(win>=0):
             tossWinPercent+=win
         else:
