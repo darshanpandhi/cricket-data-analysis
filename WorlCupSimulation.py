@@ -1,0 +1,37 @@
+from toss import main
+
+
+def simulation():
+    main("Australia", "South Africa", "Australia ", "United Arab Emirates")
+    main("England", "West Indies", "England", "United Arab Emirates")
+    main("Sri Lanka", "Bangladesh", "Sri Lanka", "United Arab Emirates")
+    main("India", "Pakistan", "Pakistan", "United Arab Emirates")
+    main("Afghanistan", "Scotland", "Afghanistan", "United Arab Emirates")
+    main("South Africa", "West Indies", "South Africa", "United Arab Emirates")
+    main("Pakistan", "New Zealand", "Pakistan", "United Arab Emirates")
+    main("England", "Bangladesh", "Bangladesh", "United Arab Emirates")
+    main("Scotland", "Namibia", "Namibia", "United Arab Emirates")
+    main("Australia", "Sri Lanka", "Australia", "United Arab Emirates")
+    main("West Indies", "Bangladesh", "Bangladesh", "United Arab Emirates")
+    main("Pakistan", "Afghanistan", "Afghanistan", "United Arab Emirates")
+    main("South Africa", "Sri Lanka", "South Africa", "United Arab Emirates")
+    main("Australia", "England", "England", "United Arab Emirates")
+    main("Afghanistan", "Namibia", "Afghanistan", "United Arab Emirates")
+    main("India", "New Zealand", "New Zealand", "United Arab Emirates")
+    main("England", "Sri Lanka", "Sri Lanka", "United Arab Emirates")
+    main("South Africa", "Bangladesh", "South Africa", "United Arab Emirates")
+    main("Pakistan", "Namibia", "Pakistan", "United Arab Emirates")
+    main("New Zealand", "Scotland", "Scotland", "United Arab Emirates")
+    main("India", "Afghanistan", "Afghanistan", "United Arab Emirates")
+    main("Australia", "Bangladesh", "Australia", "United Arab Emirates")
+    main("West Indies", "Sri Lanka", "West Indies", "United Arab Emirates")
+    main("New Zealand", "Namibia", "Namibia", "United Arab Emirates")
+    main("India", "Scotland", "India", "United Arab Emirates")
+    main("Australia", "West Indies", "Australia", "United Arab Emirates")
+    main("England", "South Africa", "England", "United Arab Emirates")
+    main("New Zealand", "Afghanistan", "Afghanistan", "United Arab Emirates")
+    main("Pakistan", "Scotland", "Pakistan", "United Arab Emirates")
+    main("India", "Namibia", "India", "United Arab Emirates")
+
+
+simulation()
