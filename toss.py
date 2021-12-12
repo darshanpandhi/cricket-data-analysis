@@ -74,8 +74,6 @@ def tossEvalTeams(team1,team2,listofMatchIds):
         team2tossWin=0
     
     return [team1tossWin,team2tossWin]
-        
-
 
 def tossWinPercentage(teamName, listofMatchIds):
     
@@ -130,7 +128,6 @@ def tossAverage():
             totalTeams-=1
     print("\nIf a team wins the toss, their match winning chances are(average %): ",tossWinPercent/totalTeams)
 
-
 def headToHead(team1,team2,listofMatchIds):
     
     team1MatchesWon=0
@@ -181,45 +178,5 @@ def teamRanking(team1, team2):
 
     return [team1win,team2win]
 
-def main():
-    team1=input("Enter the name of team1: ")
-    team2=input("Enter the name of team2: ")
-
-    listofMatchIds=generateList(team1,team2)
-    if(len(listofMatchIds)==0):
-        result=teamRanking(team1,team2)
-        if result[0]>result[1]:
-            print("Winner: ",team1)
-        elif result[1]>result[0]:
-            print("Winner: ",team2)
-        else:
-            print("Match might tie, win percentage is 50-50")
-
-    else:
-        resultHtoH=headToHead(team1,team2,listofMatchIds)
-        if resultHtoH[0]>resultHtoH[1]:
-            print("Winner: ",team1)
-            winner=team1
-        elif resultHtoH[1]>resultHtoH[0]:
-            print("Winner: ",team2)
-            winner=team2
-        else:
-            print("Match might tie, win percentage is 50-50")
-            winner=team1 +" or "+team2
-        print("-------------------------------------------------")
-
-        print("\nPrediction with toss result known: ")
-        teamWonToss=input("Enter the team name that won the toss: ")
-        resultToss=tossEvalTeams(team1,team2,listofMatchIds)
-        if teamWonToss==team1 and resultToss[0]>resultToss[1]:
-            print("Winner: ",team1)
-        elif teamWonToss==team2 and resultToss[1]>resultToss[0]:
-            print("Winner: ",team2)
-        else:
-            print("Winner: ",winner)
-
-
-
-main()
-tossAverage()
+# tossAverage()
 
