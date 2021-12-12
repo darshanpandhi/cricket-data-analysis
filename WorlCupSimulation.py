@@ -1,9 +1,5 @@
 from toss import main
 
-d = {"Australia": 0, "South Africa": 0, "England": 0, "India": 0, "Pakistan": 0, "Sri Lanka": 0, "Afghanistan": 0,
-     "Scotland": 0, "West Indies": 0
-    , "New Zealand": 0, "Namibia": 0, "Bangladesh": 0, }
-
 d1 = {"England": 0, "Australia": 0, "South Africa": 0, "Sri Lanka": 0, "West Indies": 0, "Bangladesh": 0}
 d2 = {"Pakistan": 0, "New Zealand": 0, "India": 0, "Afghanistan": 0, "Namibia": 0, "Scotland": 0}
 
@@ -74,7 +70,29 @@ def simulation():
     checkWinner(Winner)
     Winner = main("India", "Namibia", "India", "United Arab Emirates")
     checkWinner(Winner)
+    FirstWinner, FirstWinnerPoints, SecondWinner, SecondWinnerpoints = FindWinner(d1)
+    print("The Top two teams from The Group1 ", FirstWinner, FirstWinnerPoints)
+    print("The Top two teams from the Group 1", SecondWinner, SecondWinnerpoints)
 
+    FirstWinner, FirstWinnerPoints, SecondWinner, SecondWinnerpoints = FindWinner(d2)
+    print("The Top two teams from The Group2 ", FirstWinner, FirstWinnerPoints)
+    print("The Top two teams from the Group 2", SecondWinner, SecondWinnerpoints)
+
+
+def FindWinner(g):
+    FirstWinner = ''
+    SecondWinner = ''
+    FirstWinnerPoints = 0
+    SecondWinnerPoints = 0
+    for name, points in g.items():
+        if FirstWinnerPoints < points:
+            FirstWinnerPoints = points
+            FirstWinner = name
+    for name, points in g.items():
+        if points < FirstWinnerPoints and points > SecondWinnerPoints:
+            SecondWinner = name
+            SecondWinnerPoints = points
+    return FirstWinner, FirstWinnerPoints, SecondWinner, SecondWinnerPoints
 
 
 def updatePoints(matchWinner):
@@ -95,7 +113,6 @@ def updatePoints(matchWinner):
 
     print("The matches of Group 1 is ", d1)
     print("The matches of Group 2 is ", d2)
-
 
 
 simulation()
