@@ -1,6 +1,7 @@
 import csv
 
 from datasets import generateList
+from teamRankings import getTeamRankingWinner
 
 
 def getHeadToHeadWinProbability(team1, team2):
@@ -41,11 +42,10 @@ def getHeadToHeadWinner(team1, team2, printResult):
         winner = team1
     elif headToHeadWinProbability[1] > headToHeadWinProbability[0]:
         winner = team2
+    elif headToHeadWinProbability[0] == headToHeadWinProbability[1]:
+        winner=getTeamRankingWinner(team1,team2,False)
 
     if printResult:
-        if winner:
-            print("Winner: ", winner)
-        else:
-            print("Match Prediction: tie, win percentage is 50-50")
+        print("Winner: ", winner)
 
     return winner
