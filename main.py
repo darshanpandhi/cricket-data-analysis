@@ -25,10 +25,11 @@ def predictMatchResultByUserInput():
     listofMatchIds = generateList(team1, team2)
 
     if len(listofMatchIds) == 0:
-        getTeamRankingWinner(team1, team2, True)
+        winner = getTeamRankingWinner(team1, team2, False)
     else:
-        resultHtoH = getHeadToHeadWinner(team1, team2, True)
-        winner = resultHtoH
+        headToHeadPredictedWinner = getHeadToHeadWinner(team1, team2, False)
+        tossPredictedWinner = headToHeadPredictedWinner
+        venuePredictedWinner =headToHeadPredictedWinner
 
     print("-------------------------------------------------")
 
@@ -39,11 +40,9 @@ def predictMatchResultByUserInput():
     if teamWonToss:
         resultToss = tossEvalTeams(team1, team2, listofMatchIds)
         if teamWonToss == team1 and resultToss[0] > resultToss[1]:
-            winner = team1
+            tossPredictedWinner = team1
         elif teamWonToss == team2 and resultToss[1] > resultToss[0]:
-            winner = team2
-
-    print("Winner: ", winner)
+            tossPredictedWinner = team2
 
     print("-------------------------------------------------")
     print("\nPrediction based on venue:")
@@ -51,7 +50,9 @@ def predictMatchResultByUserInput():
     if venue:
         resultVenue = getVenuePrediction(team1, team2, venue)
         if resultVenue:
-            winner = resultVenue
+            venuePredictedWinner = resultVenue
+
+    winner = majorityString(headToHeadPredictedWinner, tossPredictedWinner, venuePredictedWinner)   
 
     print("Winner: ", winner)
 
