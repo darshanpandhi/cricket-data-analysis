@@ -84,7 +84,8 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
     return winner
 
 def main():
-    predictMatchResultByUserInput()
+    #predictMatchResultByUserInput()
+    predictMatchResult("India","Australia","","United Arab Emirates")
 
 if  __name__ == '__main__':
     main()
