@@ -84,4 +84,4 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
     return winner
 
 
-predictMatchResult('England', 'Bangladesh', 'Bangladesh', 'United Arab Emirates')
+predictMatchResultByUserInput()
