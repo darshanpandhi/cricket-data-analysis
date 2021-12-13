@@ -83,5 +83,8 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
 
     return winner
 
+def main():
+    predictMatchResultByUserInput()
 
-predictMatchResultByUserInput()
+if  __name__ == '__main__':
+    main()
