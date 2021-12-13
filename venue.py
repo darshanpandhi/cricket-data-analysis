@@ -1,8 +1,8 @@
-from datasets import confirmMatchWinner, findMatchIdsForATeam
+from datasets import confirmMatchWinner, generateList
 
 from matchVenueFinder import findCountryWithMatchId
 
-from TeamAndVenues import worldCupTeams
+from TeamAndVenues import TeamAndVenues
 
 def getHomeAndAwayPercentage(teamName):
 
@@ -12,7 +12,7 @@ def getHomeAndAwayPercentage(teamName):
     awayMatchIds = []
     awayMatchesWon = 0
     
-    listOfMatchIds = findMatchIdsForATeam(teamName)
+    listOfMatchIds = generateList(teamName,"")
     matchesPlayed = len(listOfMatchIds)
 
     for matchId in listOfMatchIds:
@@ -52,6 +52,7 @@ def findNoOfWins(matchIds, team):
     return matchesWon
 
 def HomeAndAwayForWorldCupTeams():
-    for teams in worldCupTeams:
+    for teams in TeamAndVenues.keys:
         currentTeam = teams
         print(currentTeam + ":" + str(getHomeAndAwayPercentage(currentTeam)))
+
