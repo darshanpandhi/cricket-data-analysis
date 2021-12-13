@@ -7,7 +7,7 @@
 - It will print the winner after the user input. Remember: the name of two teams is required to predict but the toss result and venue is optional.
 
 ## Sample input
-team1, team2, teamWonToss, venue
+### team1, team2, teamWonToss, venue
 You can use the following series of input as follows:
 - "India","England","India","United Arab Emirates"
 - "India","England","","United Arab Emirates"
