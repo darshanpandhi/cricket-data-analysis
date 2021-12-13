@@ -63,9 +63,7 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
         getTeamRankingWinner(team1, team2, True)
         winner = getTeamRankingWinner(team1, team2, True)
     else:
-        headToHeadPredictedWinner = getHeadToHeadWinner(team1, team2, True)
-        # winner = resultHtoH
-
+        headToHeadPredictedWinner = getHeadToHeadWinner(team1, team2, False)
 
         tossPredictedWinner = headToHeadPredictedWinner
         venuePredictedWinner = headToHeadPredictedWinner
@@ -81,8 +79,8 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
             if resultVenue:
                 venuePredictedWinner = resultVenue
 
-        winner = majorityString(headToHeadPredictedWinner, tossPredictedWinner, venuePredictedWinner)
-        print("Winner: ", winner)
+    winner = majorityString(headToHeadPredictedWinner, tossPredictedWinner, venuePredictedWinner)
+    print("Winner: ", winner)
 
     return winner
 
