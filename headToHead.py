@@ -49,3 +49,4 @@ def getHeadToHeadWinner(team1, team2, printResult):
             print("Match Prediction: tie, win percentage is 50-50")
 
     return winner
+ 
