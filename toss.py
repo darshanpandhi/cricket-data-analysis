@@ -114,4 +114,4 @@ def tossAverage():
             tossWinPercent += win
         else:
             totalTeams -= 1
-    print("\nIf a team wins the toss, their match winning chances are(average %): ", tossWinPercent / totalTeams)\
+    print("\nIf a team wins the toss, their match winning chances are(average %): ", tossWinPercent / totalTeams)

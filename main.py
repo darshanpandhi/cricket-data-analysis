@@ -5,6 +5,19 @@ from toss import tossEvalTeams
 from datasets import generateList
 
 
+def majorityString(string1, string2, string3):
+    majorityString = None
+
+    if string1 == string2:
+        majorityString = string1
+    if string1 == string3:
+        majorityString = string1
+    if string2 == string3:
+        majorityString = string2
+
+    return majorityString
+
+
 def predictMatchResultByUserInput():
     team1 = input("Enter the name of team1: ")
     team2 = input("Enter the name of team2: ")
@@ -50,29 +63,28 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
         getTeamRankingWinner(team1, team2, True)
         winner = getTeamRankingWinner(team1, team2, True)
     else:
-        resultHtoH = getHeadToHeadWinner(team1, team2, True)
-        winner = resultHtoH
+        headToHeadPredictedWinner = getHeadToHeadWinner(team1, team2, True)
+        # winner = resultHtoH
 
-        print("-------------------------------------------------")
 
-        print("\nPrediction with toss result known: ")
+        tossPredictedWinner = headToHeadPredictedWinner
+        venuePredictedWinner = headToHeadPredictedWinner
+
         if teamWonToss:
             resultToss = tossEvalTeams(team1, team2, listofMatchIds)
             if teamWonToss == team1 and resultToss[0] > resultToss[1]:
-                winner = team1
+                tossPredictedWinner = team1
             elif teamWonToss == team2 and resultToss[1] > resultToss[0]:
-                winner = team2
-        print("Winner: ", winner)
-
-        print("-------------------------------------------------")
-        print("\nPrediction based on venue:")
+                tossPredictedWinner = team2
         if venue:
             resultVenue = getVenuePrediction(team1, team2, venue)
             if resultVenue:
-                winner = resultVenue
+                venuePredictedWinner = resultVenue
+
+        winner = majorityString(headToHeadPredictedWinner, tossPredictedWinner, venuePredictedWinner)
         print("Winner: ", winner)
 
     return winner
 
 
-predictMatchResultByUserInput()
+predictMatchResult('India', 'Australia', 'India', 'India')
