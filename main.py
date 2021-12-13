@@ -5,7 +5,7 @@ from toss import tossEvalTeams
 from datasets import generateList
 
 
-def predictMatchResult():
+def predictMatchResultByUserInput():
     team1 = input("Enter the name of team1: ")
     team2 = input("Enter the name of team2: ")
 
@@ -67,5 +67,6 @@ def predictMatchResult(team1,team2,teamWonToss,venue):
 
     return winner
 
+predictMatchResultByUserInput()
 
 
