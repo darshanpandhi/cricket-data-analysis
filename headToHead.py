@@ -1,6 +1,6 @@
 import csv
 
-from toss import generateList
+from datasets import generateList
 
 
 def getHeadToHeadWinProbability(team1, team2):
