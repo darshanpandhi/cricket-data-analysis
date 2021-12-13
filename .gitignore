@@ -3,3 +3,4 @@ __pycache__
 extracted_data.csv
 *.pyc
 
+*.pyc
