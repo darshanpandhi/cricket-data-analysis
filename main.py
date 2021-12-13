@@ -67,6 +67,5 @@ def predictMatchResult(team1,team2,teamWonToss,venue):
 
     return winner
 
-predictMatchResult("Australia","New Zealand","New Zealand","United Arab Emirates")
 
 
