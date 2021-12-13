@@ -24,7 +24,21 @@ def read_file():
         df = df.append(dataframe1)
     df.to_csv('extracted_data.csv')
 
-def findMatchIdsForATeam(team):
+def generateList(team1, team2):
+    f = open("data/t20s_male_csv2/README.txt", "r")
+    listofMatchIds = []
+    L = f.readlines()
+    str1 = team1 + " vs " + team2
+    str2 = team2 + " vs " + team1
+    for line in L:
+        if str1 in line or str2 in line:
+            Id = line[42:49]
+            Id.strip()
+            listofMatchIds.append(Id)
+    f.close()
+    return listofMatchIds
+
+"""def findMatchIdsForATeam(team):
     f=open("data/t20s_male_csv2/README.txt","r")
     listofMatchIds=[]
     L=f.readlines()
@@ -47,6 +61,8 @@ def findMatchIdsForTwoTeams(t1, t2):
         if final_data['team2'][i] == t1:
             if final_data['team1'][i] == t2:
                 ls.append(final_data['match_id'][i])
+    return ls
+"""
 
 def confirmMatchWinner(matchId, teamToBeConfirmed):
     fileName=matchId.strip()
