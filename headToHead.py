@@ -35,7 +35,7 @@ def getHeadToHeadWinProbability(team1, team2):
 
 def getHeadToHeadWinner(team1, team2, printResult):
     headToHeadWinProbability = getHeadToHeadWinProbability(team1, team2)
-    winner = None
+    winner = team1
 
     if headToHeadWinProbability[0] > headToHeadWinProbability[1]:
         winner = team1
@@ -49,4 +49,3 @@ def getHeadToHeadWinner(team1, team2, printResult):
             print("Match Prediction: tie, win percentage is 50-50")
 
     return winner
- 

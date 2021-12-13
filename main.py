@@ -63,7 +63,6 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
         winner = getTeamRankingWinner(team1, team2, False)
     else:
         headToHeadPredictedWinner = getHeadToHeadWinner(team1, team2, False)
-
         tossPredictedWinner = headToHeadPredictedWinner
         venuePredictedWinner = headToHeadPredictedWinner
 
@@ -84,4 +83,4 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
     return winner
 
 
-predictMatchResultByUserInput()
+predictMatchResult('Australia', 'Sri Lanka', 'Australia', 'United Arab Emirates')
