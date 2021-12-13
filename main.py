@@ -31,28 +31,28 @@ def predictMatchResultByUserInput():
         tossPredictedWinner = headToHeadPredictedWinner
         venuePredictedWinner =headToHeadPredictedWinner
 
-    print("-------------------------------------------------")
+        print("-------------------------------------------------")
 
-    print("\nPrediction with toss result known: ")
+        print("\nPrediction with toss result known: ")
 
-    teamWonToss = input("Enter the team name that won the toss: ")
+        teamWonToss = input("Enter the team name that won the toss: ")
 
-    if teamWonToss:
-        resultToss = tossEvalTeams(team1, team2, listofMatchIds)
-        if teamWonToss == team1 and resultToss[0] > resultToss[1]:
-            tossPredictedWinner = team1
-        elif teamWonToss == team2 and resultToss[1] > resultToss[0]:
-            tossPredictedWinner = team2
+        if teamWonToss:
+            resultToss = tossEvalTeams(team1, team2, listofMatchIds)
+            if teamWonToss == team1 and resultToss[0] > resultToss[1]:
+                tossPredictedWinner = team1
+            elif teamWonToss == team2 and resultToss[1] > resultToss[0]:
+                tossPredictedWinner = team2
 
-    print("-------------------------------------------------")
-    print("\nPrediction based on venue:")
-    venue = input("Enter the venue as a team name: ")
-    if venue:
-        resultVenue = getVenuePrediction(team1, team2, venue)
-        if resultVenue:
-            venuePredictedWinner = resultVenue
+        print("-------------------------------------------------")
+        print("\nPrediction based on venue:")
+        venue = input("Enter the venue as a team name: ")
+        if venue:
+            resultVenue = getVenuePrediction(team1, team2, venue)
+            if resultVenue:
+                venuePredictedWinner = resultVenue
 
-    winner = majorityString(headToHeadPredictedWinner, tossPredictedWinner, venuePredictedWinner)   
+        winner = majorityString(headToHeadPredictedWinner, tossPredictedWinner, venuePredictedWinner)   
 
     print("Winner: ", winner)
 
