@@ -5,6 +5,7 @@ import glob
 import re
 from matchVenueFinder import findCountryWithMatchId
 
+
 def read_file():
     path = os.getcwd()
     csv_files = glob.glob(os.path.join(path, "..\\cricket-data-analysis\\data\\t20s_male_csv2"
@@ -24,6 +25,7 @@ def read_file():
         df = df.append(dataframe1)
     df.to_csv('extracted_data.csv')
 
+
 def generateList(team1, team2):
     f = open("data/t20s_male_csv2/README.txt", "r")
     listofMatchIds = []
@@ -36,6 +38,7 @@ def generateList(team1, team2):
             listofMatchIds.append(Id.strip())
     f.close()
     return listofMatchIds
+
 
 def getMatchWinner(matchId):
 
@@ -99,6 +102,7 @@ def generateCountriesCsv():
         csv_writer.writerow(row)
 
     csv_file.close()
+
 
 def getMatchesPlayedInVenue(team1, team2, venueCountry):
 
