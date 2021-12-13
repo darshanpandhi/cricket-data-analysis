@@ -42,6 +42,10 @@ def getHomeAndAwayPercentage(teamName):
 
     return homeWinPercentage, awayWinPercentage
 
+def getHomePercentage(team):
+    percentage=getHomeAndAwayPercentage(team)
+    return percentage[0]
+
 def findNoOfWins(matchIds, team):
     matchesWon = 0
 
@@ -55,4 +59,10 @@ def HomeAndAwayForWorldCupTeams():
     for teams in TeamAndVenues.keys:
         currentTeam = teams
         print(currentTeam + ":" + str(getHomeAndAwayPercentage(currentTeam)))
+
+def getHomeAdvantage(team1,team2):
+    homePercenTageTeam1 = getHomePercentage(team1)
+    homePercenTageTeam2 = getHomePercentage(team2)
+
+    return [homePercenTageTeam1,homePercenTageTeam2]
 
