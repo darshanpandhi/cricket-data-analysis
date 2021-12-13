@@ -4,6 +4,8 @@ import os
 import glob
 import re
 
+from matchVenueFinder import findCountryWithMatchId
+
 
 def read_file():
     path = os.getcwd()
@@ -24,6 +26,7 @@ def read_file():
         df = df.append(dataframe1)
     df.to_csv('extracted_data.csv')
 
+
 def generateList(team1, team2):
     f = open("data/t20s_male_csv2/README.txt", "r")
     listofMatchIds = []
@@ -33,55 +36,29 @@ def generateList(team1, team2):
     for line in L:
         if str1 in line or str2 in line:
             Id = line[42:49]
-            Id.strip()
-            listofMatchIds.append(Id)
+            listofMatchIds.append(Id.strip())
     f.close()
     return listofMatchIds
 
-"""def findMatchIdsForATeam(team):
-    f=open("data/t20s_male_csv2/README.txt","r")
-    listofMatchIds=[]
-    L=f.readlines()
 
-    for line in L:
-        if team in line:    
-            Id=line[42:49]
-            Id.strip()
-            listofMatchIds.append(Id)
-    f.close()
-    return listofMatchIds
+def getMatchWinner(matchId):
 
-def findMatchIdsForTwoTeams(t1, t2):
-    ls = []
-    final_data = pd.read_csv('extracted_data.csv')
-    for i in range(len(final_data['match_id'])):
-        if final_data['team1'][i] == t1:
-            if final_data['team2'][i] == t2:
-                ls.append(final_data['match_id'][i])
-        if final_data['team2'][i] == t1:
-            if final_data['team1'][i] == t2:
-                ls.append(final_data['match_id'][i])
-    return ls
-"""
+    matchWinner = None
 
-def confirmMatchWinner(matchId, teamToBeConfirmed):
-    fileName=matchId.strip()
-    fileName=fileName+"_info.csv"
-    f=open("data/t20s_male_csv2/"+fileName,"r")
-    csv_f=csv.reader(f)
-    csv_f=list(csv_f)
+    fileName = matchId.strip()
+    fileName = fileName + "_info.csv"
+    f = open("data/t20s_male_csv2/" + fileName, "r")
+    csv_f = csv.reader(f)
+    csv_f = list(csv_f)
 
     for line in csv_f:
         if "winner" in line:
-            winnerTeam=""
             for words in line[2:]:
-                winnerTeam+=words
-            if teamToBeConfirmed == winnerTeam:
-                return True
-            else:
-                return False
-        
+                matchWinner = words
+
     f.close()
+
+    return matchWinner
 
 
 def generateCountriesCsv():
@@ -126,3 +103,15 @@ def generateCountriesCsv():
         csv_writer.writerow(row)
 
     csv_file.close()
+
+
+def getMatchesPlayedInVenue(team1, team2, venueCountry):
+
+    bothTeamMatches = generateList(team1, team2)
+    matchesPlayedInVenueList = []
+
+    for matchId in bothTeamMatches:
+        if findCountryWithMatchId(matchId) == venueCountry:
+            matchesPlayedInVenueList.append(matchId)
+
+    return matchesPlayedInVenueList

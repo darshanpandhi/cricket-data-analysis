@@ -1,22 +1,20 @@
-from datasets import confirmMatchWinner, generateList
-
+from datasets import generateList, getMatchesPlayedInVenue, getMatchWinner
 from matchVenueFinder import findCountryWithMatchId
-
 from TeamAndVenues import TeamAndVenues
 
-def getHomeAndAwayPercentage(teamName):
 
+def getHomeAndAwayPercentage(teamName):
     homeMatchIds = []
     homeMatchesWon = 0
 
     awayMatchIds = []
     awayMatchesWon = 0
-    
-    listOfMatchIds = generateList(teamName,"")
+
+    listOfMatchIds = generateList(teamName, "")
     matchesPlayed = len(listOfMatchIds)
 
     for matchId in listOfMatchIds:
-        if(findCountryWithMatchId(matchId)==teamName):
+        if (findCountryWithMatchId(matchId) == teamName):
             homeMatchIds.append(matchId)
         else:
             awayMatchIds.append(matchId)
@@ -24,45 +22,72 @@ def getHomeAndAwayPercentage(teamName):
     noOfHomeMatches = len(homeMatchIds)
     noOfAwayMatches = len(awayMatchIds)
 
-    homeMatchesWon = findNoOfWins(homeMatchIds,teamName)
-    awayMatchesWon = findNoOfWins(awayMatchIds,teamName)
+    homeMatchesWon = findNoOfWins(homeMatchIds, teamName)
+    awayMatchesWon = findNoOfWins(awayMatchIds, teamName)
 
-    if(noOfHomeMatches):
-        homeWinPercentage = homeMatchesWon/noOfHomeMatches*100
+    if (noOfHomeMatches):
+        homeWinPercentage = homeMatchesWon / noOfHomeMatches * 100
     else:
-        homeWinPercentage = 100    
-    
-    if(noOfAwayMatches):
-        awayWinPercentage = awayMatchesWon/noOfAwayMatches*100
+        homeWinPercentage = 100
+
+    if (noOfAwayMatches):
+        awayWinPercentage = awayMatchesWon / noOfAwayMatches * 100
     else:
         awayWinPercentage = 100
-    
-    #print("Home: " + str(noOfHomeMatches))
-    #print("Away: " + str(noOfAwayMatches))
+
+    # print("Home: " + str(noOfHomeMatches))
+    # print("Away: " + str(noOfAwayMatches))
 
     return homeWinPercentage, awayWinPercentage
 
+
 def getHomePercentage(team):
-    percentage=getHomeAndAwayPercentage(team)
+    percentage = getHomeAndAwayPercentage(team)
     return percentage[0]
+
 
 def findNoOfWins(matchIds, team):
     matchesWon = 0
 
     for matchId in matchIds:
-        if(confirmMatchWinner(matchId,team)):
-            matchesWon = matchesWon+1
-    
+        if getMatchWinner(matchId) == team:
+            matchesWon = matchesWon + 1
+
     return matchesWon
+
 
 def HomeAndAwayForWorldCupTeams():
     for teams in TeamAndVenues.keys:
         currentTeam = teams
         print(currentTeam + ":" + str(getHomeAndAwayPercentage(currentTeam)))
 
-def getHomeAdvantage(team1,team2):
+
+def getHomeAdvantage(team1, team2):
     homePercenTageTeam1 = getHomePercentage(team1)
     homePercenTageTeam2 = getHomePercentage(team2)
 
-    return [homePercenTageTeam1,homePercenTageTeam2]
+    return [homePercenTageTeam1, homePercenTageTeam2]
 
+
+def getVenuePrediction(team1, team2, venueCountry):
+    predictedWinner = None
+
+    matchIdsInVenue = getMatchesPlayedInVenue(team1, team2, venueCountry)
+    team1WinsInVenue = 0
+    team2WinsInVenue = 0
+
+    for matchIdInVenue in matchIdsInVenue:
+
+        currentMatchWinner = getMatchWinner(matchIdInVenue)
+
+        if currentMatchWinner == team1:
+            team1WinsInVenue += 1
+        elif currentMatchWinner == team2:
+            team2WinsInVenue += 1
+
+    if team1WinsInVenue > team2WinsInVenue:
+        predictedWinner = team1
+    elif team1WinsInVenue < team2WinsInVenue:
+        predictedWinner = team2
+
+    return predictedWinner
