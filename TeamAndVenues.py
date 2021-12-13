@@ -131,5 +131,8 @@ TeamAndVenues = {
     "Sweden": [],
     "Belize": []
 }
+groupStage1 = {"England": 0, "Australia": 0, "South Africa": 0,  "West Indies": 0,}
+groupStage2 = {"Pakistan": 0, "India": 0, "New Zealand": 0, "Afghanistan": 0,}
 
-worldCupTeams = ["Afghanistan", "Australia", "Bangladesh", "England", "India", "Ireland", "Namibia", "Netherlands", "New Zealand", "Oman", "Pakistan", "Papua New Guinea", "Scotland", "South Africa", "Sri Lanka", "West Indies"]
+groupA={"Sri Lanka":0,"Namibia":0,"Ireland":0,"Netherlands":0}
+groupB={"Scotland":0,"Bangladesh":0,"Oman":0,"Papua New Guinea":0}
