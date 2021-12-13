@@ -1,6 +1,7 @@
 from headToHead import getHeadToHeadWinner
 from teamRankings import getTeamRankingWinner
-from toss import generateList, tossEvalTeams
+from toss import tossEvalTeams
+from datasets import generateList
 
 
 def predictMatchResult():
