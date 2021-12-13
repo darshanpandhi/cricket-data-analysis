@@ -60,8 +60,7 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
     listofMatchIds = generateList(team1, team2)
 
     if len(listofMatchIds) == 0:
-        getTeamRankingWinner(team1, team2, True)
-        winner = getTeamRankingWinner(team1, team2, True)
+        winner = getTeamRankingWinner(team1, team2, False)
     else:
         headToHeadPredictedWinner = getHeadToHeadWinner(team1, team2, False)
 
@@ -79,10 +78,10 @@ def predictMatchResult(team1, team2, teamWonToss, venue):
             if resultVenue:
                 venuePredictedWinner = resultVenue
 
-    winner = majorityString(headToHeadPredictedWinner, tossPredictedWinner, venuePredictedWinner)
+        winner = majorityString(headToHeadPredictedWinner, tossPredictedWinner, venuePredictedWinner)
     print("Winner: ", winner)
 
     return winner
 
 
-predictMatchResultByUserInput()
+predictMatchResult('England', 'Bangladesh', 'Bangladesh', 'United Arab Emirates')
